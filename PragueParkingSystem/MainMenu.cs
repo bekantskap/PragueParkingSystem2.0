@@ -32,7 +32,8 @@ namespace PragueParkingSystem
                 switch (UserChoice)
                 {
                     case '1':
-                        ParkVehicle();
+                        //ParkVehicle();
+                        Mc.ParkMC();
 
                         break;
                     //case '2':
@@ -66,13 +67,14 @@ namespace PragueParkingSystem
 
                 if (TypeOfVehicle.Contains("mc"))
                 {
-                    Mc mc = new Mc();
-                    Console.WriteLine("Enter license number: ");
-                    string userInput = Console.ReadLine().ToUpper();
-                    Console.WriteLine($"This {mc.VehicleType} will take {mc.CarSize} spaces\n License Number is: {userInput}\n Time of check in: {Vehicle.TimeCheckin()}");
-                    ParkingSpaces.parkingSpots.Add(new ParkingList { parkingList = { new Mc { LicensePlate = userInput, CarSize = mc.CarSize, VehicleType = mc.VehicleType, TimeStamp = Vehicle.TimeCheckin() } } });
-                    parkingChosen = true;
-                    Console.ReadKey();
+                    //Mc mc = new Mc();
+                    //Console.WriteLine("Enter license number: ");
+                    //string userInput = Console.ReadLine().ToUpper();
+                    //Console.WriteLine($"This {mc.VehicleType} will take {mc.CarSize} spaces\n License Number is: {userInput}\n Time of check in: {Vehicle.TimeCheckin()}");
+                    //ParkingSpaces.parkingSpots.Add(new ParkingList { parkingList = { new Mc { LicensePlate = userInput, CarSize = mc.CarSize, VehicleType = mc.VehicleType, TimeStamp = Vehicle.TimeCheckin() } } });
+                    //parkingChosen = true;
+                    //ReadData.SerializeObject();
+                    //Console.ReadKey();
                 }
 
                 else if (TypeOfVehicle.Contains("car"))
@@ -125,13 +127,17 @@ namespace PragueParkingSystem
 
         public void ParkingLotMap()
         {
-            var parkingList = new ParkingList();
-            foreach (var parkList in ParkingSpaces.parkingSpots)
+            List<ParkingList> spaces = ParkingSpaces.parkingSpots;
+            foreach (ParkingList parkingSpot in spaces)
             {
-                Console.WriteLine(parkList);
+                foreach (Vehicle vehicle in parkingSpot.parkingList)
+                {
+                    Console.WriteLine("SpaceNum:" + parkingSpot.parkingLotNumber + "vehicle: " + vehicle.LicensePlate + " " + vehicle.VehicleType);
+                }
             }
             Console.ReadKey();
         }
+
 
 
     }

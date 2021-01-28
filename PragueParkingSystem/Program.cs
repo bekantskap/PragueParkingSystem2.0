@@ -11,6 +11,8 @@ namespace PragueParkingSystem
         
         static void Main(string[] args)
         {
+            ReadData.DeserializeObject();
+            //List<ParkingList> parkingListnum = ReadData.DeserializeObject();
             var m = new MainMenu();
             m.MenuOptions();
             
