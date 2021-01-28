@@ -43,9 +43,9 @@ namespace PragueParkingSystem
                     //    SearchVehicle();
                     //    RemoveVehicle();
                     //    break;
-                    case '4':
-                        SearchVehicle();
-                        break;
+                    //case '4':
+                    //    SearchVehicle();
+                    //    break;
                     case '5':
                         ParkingLotMap();
                         break;
@@ -66,12 +66,11 @@ namespace PragueParkingSystem
 
                 if (TypeOfVehicle.Contains("mc"))
                 {
-                    //Mc mc = new Mc();
-                    //Console.WriteLine($"This {mc.VehicleType} will take {mc.CarSize} spaces\n License Number is: {mc.LicensePlate}\n Time of check in: {mc.TimeStamp}");
-                    //ParkingSpaces.parkingSpots.Add(new ParkingList { parkingList = { new Mc { LicensePlate = mc.LicensePlate, CarSize = mc.CarSize, VehicleType = mc.VehicleType, TimeStamp = Vehicle.TimeCheckin() } } });
-                    var mc = new Mc();
-                    
-                    
+                    Mc mc = new Mc();
+                    Console.WriteLine("Enter license number: ");
+                    string userInput = Console.ReadLine().ToUpper();
+                    Console.WriteLine($"This {mc.VehicleType} will take {mc.CarSize} spaces\n License Number is: {userInput}\n Time of check in: {Vehicle.TimeCheckin()}");
+                    ParkingSpaces.parkingSpots.Add(new ParkingList { parkingList = { new Mc { LicensePlate = userInput, CarSize = mc.CarSize, VehicleType = mc.VehicleType, TimeStamp = Vehicle.TimeCheckin() } } });
                     parkingChosen = true;
                     Console.ReadKey();
                 }
@@ -110,19 +109,14 @@ namespace PragueParkingSystem
 
 
         }
-        public void SearchVehicle()
-        {
-            //Console.Write($"Enter the registration number of your desired vehicle: ");
-            //string findAnswer = Console.ReadLine().ToLower();
-            //var answer = ParkingSpaces..Where(answer => answer.parkingList == findAnswer);
+        //public static void SearchVehicle()
+        //{
+        //    Console.WriteLine("Enter license plate number: ");
+        //    string licensePlateSearch = Console.ReadLine();
 
-            //foreach (var parkedCar in ParkingSpaces.parkingSpots)
-            //{
-            //    Console.WriteLine($"Car: {}:{author.Book}:{author.Price}");
-            //}
-
-
-        }
+        //    ParkingSpaces obj;
+        //    obj = ParkingList.Find(x => x.licensePlateSearch);
+        //}
 
         public void RemoveVehicle()
         {
@@ -131,12 +125,12 @@ namespace PragueParkingSystem
 
         public void ParkingLotMap()
         {
-            //var parkingList = new ParkingList();
-            //foreach (var parkList in ParkingList.parkingList)
-            //{
-            //    Console.WriteLine(parkList);
-            //}
-            //Console.ReadKey();
+            var parkingList = new ParkingList();
+            foreach (var parkList in ParkingSpaces.parkingSpots)
+            {
+                Console.WriteLine(parkList);
+            }
+            Console.ReadKey();
         }
 
 
