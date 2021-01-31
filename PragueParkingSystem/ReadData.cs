@@ -31,25 +31,53 @@ namespace PragueParkingSystem
             ParkingSpaces.parkingSpots = JsonConvert.DeserializeObject<List<ParkingList>>(json);
         }
 
-        public void ReadWriteConfig()
+        public static void SerializeConfig()
         {
-            if (File.Exists(fileConfigPathJSON))
+            JsonSerializer seralizer = new JsonSerializer();
+            seralizer.Converters.Add(new JavaScriptDateTimeConverter());
+            seralizer.NullValueHandling = NullValueHandling.Ignore;
+            string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
+            var result = JsonConvert.SerializeObject(Formatting.Indented);
+            using (StreamWriter writer = new StreamWriter(fileConfigPathJSON))
             {
-                string result = File.ReadAllText(fileConfigPathJSON);
-                newConfig = JsonConvert.DeserializeObject<ConfigSettings>(result);
-            } 
-            if(!File.Exists(fileConfigPathJSON))
-            {
-                JsonSerializer seralizer = new JsonSerializer();
-                seralizer.Converters.Add(new JavaScriptDateTimeConverter());
-                seralizer.NullValueHandling = NullValueHandling.Ignore;
-                var result = JsonConvert.SerializeObject(newConfig, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(fileConfigPathJSON))
-                {
-                    writer.Write(result);
-                }
+                writer.Write(result);
             }
         }
+
+        public static void DeserializeConfig()
+        {
+            string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
+            string result = File.ReadAllText(fileConfigPathJSON);
+            JsonConvert.DeserializeObject<ConfigSettings>(result);
+        }
+
+
+
+
+
+
+
+
+
+        //public void ReadWriteConfig()
+        //{
+        //    if (File.Exists(fileConfigPathJSON))
+        //    {
+        //        string result = File.ReadAllText(fileConfigPathJSON);
+        //        newConfig = JsonConvert.DeserializeObject<ConfigSettings>(result);
+        //    } 
+        //    if(!File.Exists(fileConfigPathJSON))
+        //    {
+        //        JsonSerializer seralizer = new JsonSerializer();
+        //        seralizer.Converters.Add(new JavaScriptDateTimeConverter());
+        //        seralizer.NullValueHandling = NullValueHandling.Ignore;
+        //        var result = JsonConvert.SerializeObject(newConfig, Formatting.Indented);
+        //        using (StreamWriter writer = new StreamWriter(fileConfigPathJSON))
+        //        {
+        //            writer.Write(result);
+        //        }
+        //    }
+        //}
 
 
 

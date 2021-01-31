@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-
+using System.Configuration;
 namespace PragueParkingSystem
 {
     class MainMenu
@@ -65,7 +65,6 @@ namespace PragueParkingSystem
                         break;
                 }
             } while (!UserChoice.Equals('q'));
-            ReadData.SerializeObject();
         }
 
         public void MoveVehicle()
@@ -191,6 +190,36 @@ namespace PragueParkingSystem
             Console.ReadKey();
         }
 
+
+
+
+
+
+
+        //public void CreateSpaces()
+        //{
+        //    int phouseSize = int.Parse(ConfigurationManager.AppSettings["ParkingHouseSize"]);
+        //    int pSpotSize = int.Parse(ConfigurationManager.AppSettings["ParkingSpotSize"]);
+        //    int freeMins = int.Parse(ConfigurationManager.AppSettings["FreeMinutes"]);
+        //    float carPrice = float.Parse(ConfigurationManager.AppSettings["CarPrice"]);
+        //    float mcPrice = float.Parse(ConfigurationManager.AppSettings["MCPrice"]);
+
+        //    if (ParkingSpaces.parkingSpots.Count == 0)
+        //    {
+        //        ReadData.SerializeObject();
+
+        //        for (int i = 0; i < phouseSize; i++)
+        //        {
+        //            ParkingList pl = new ParkingList();
+        //            pl.parkingList = new List<Vehicle>();
+        //            pl.parkingLotNumber = i + 1;
+        //            pl.availableSpace = pSpotSize;
+        //            ParkingSpaces.parkingSpots.Add(pl);
+        //        }
+        //        Console.WriteLine(ParkingSpaces.parkingSpots.Count);
+        //    }
+
+        //}
 
 
     }

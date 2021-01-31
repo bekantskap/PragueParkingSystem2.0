@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Configuration;
 
 namespace PragueParkingSystem
 {
@@ -11,13 +12,8 @@ namespace PragueParkingSystem
         
         static void Main(string[] args)
         {
-            ParkingSpaces.CreateSpaces();
-            ReadData rd = new ReadData();
-            rd.ReadWriteConfig();
-            Console.WriteLine(ConfigSettings.ParkingHouseSize);
-            Console.ReadKey();
-            ReadData.DeserializeObject();
             var m = new MainMenu();
+            ReadData.DeserializeObject();
             m.MenuOptions();
         }
     }
