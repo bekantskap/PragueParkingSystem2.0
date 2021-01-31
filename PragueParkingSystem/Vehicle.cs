@@ -18,6 +18,8 @@ namespace PragueParkingSystem
         public string TimeStamp
         { get; set; }
 
+
+
         //public Vehicle()
         //{
         //    LicensePlate = Tools.GenerateLicensePlate();

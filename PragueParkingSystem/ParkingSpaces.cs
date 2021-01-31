@@ -14,9 +14,26 @@ namespace PragueParkingSystem
         /// sätt counter för att sätta storlek på lista 
         ///
         /// </summary>
+        public static List<ParkingList> parkingSpots = new List<ParkingList>();
+        public static int phouseSize = ConfigSettings.ParkingHouseSize;
 
-        public static int parkingTotal = 100;
-        public static List<ParkingList> parkingSpots = new List<ParkingList>(parkingTotal);
+        public static void CreateSpaces()
+        {
+
+            if (ParkingSpaces.parkingSpots.Count == 0)
+            {
+                ReadData.SerializeObject();
+
+                for (int i = 0; i < phouseSize; i++)
+                {
+                    ParkingList pl = new ParkingList();
+                    pl.parkingList = new List<Vehicle>();
+                    pl.parkingLotNumber = i + 1;
+                    pl.availableSpace = ConfigSettings.ParkingSpotSize;
+                    parkingSpots.Add(pl);
+                }
+            }
+        }
 
     }
 }

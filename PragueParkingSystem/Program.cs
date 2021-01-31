@@ -11,44 +11,14 @@ namespace PragueParkingSystem
         
         static void Main(string[] args)
         {
+            ParkingSpaces.CreateSpaces();
+            ReadData rd = new ReadData();
+            rd.ReadWriteConfig();
+            Console.WriteLine(ConfigSettings.ParkingHouseSize);
+            Console.ReadKey();
             ReadData.DeserializeObject();
-            //List<ParkingList> parkingListnum = ReadData.DeserializeObject();
             var m = new MainMenu();
             m.MenuOptions();
-            
-            
-            
-            
-            
-            
-            
-            //var readData = new ReadData();
-
-            //var vehicleTest = new ParkingSpaces();
-            //string JSONresult = JsonConvert.SerializeObject(vehicleTest);
-            //string path = @"C:/Repos/ParkingList/pSpaces.json";
-
-            //if (!File.Exists(path))
-            //{
-            //    using (var tw = new StreamWriter(path, true))
-            //    {
-            //        tw.WriteLine(JSONresult.ToString());
-            //        tw.Close();
-            //    }
-            //}
-            //else if (!File.Exists(path))
-            //{
-            //    using (var tw = new StreamWriter(path, true))
-            //    {
-            //        tw.WriteLine(JSONresult.ToString());
-            //        tw.Close();
-            //    }
-            //}
-
-
-
-
-
         }
     }
 }

@@ -10,7 +10,12 @@ namespace PragueParkingSystem
 
         public char UserChoice
         { get; set; }
-        public string TypeOfVehicle
+        public string VehicleChoice
+        { get; set; }
+        public string LicenseChoice
+        { get; set; }
+        private int i, j, answer;
+        public string TimeStampOut
         { get; set; }
 
 
@@ -32,99 +37,147 @@ namespace PragueParkingSystem
                 switch (UserChoice)
                 {
                     case '1':
-                        //ParkVehicle();
-                        Mc.ParkMC();
 
+                        Console.WriteLine("Park an Mc or a Car?");
+                        VehicleChoice = Console.ReadLine().ToLower();
+                        switch (VehicleChoice)
+                        {
+                            case "mc":
+                                Mc.ParkMC();
+                                break;
+                            case "car":
+                                Car.ParkCar();
+                                break;
+                        }
                         break;
-                    //case '2':
-                    //    SearchVehicle();
-                    //    MoveVehicle();
-                    //    break;
-                    //case '3':
-                    //    SearchVehicle();
-                    //    RemoveVehicle();
-                    //    break;
-                    //case '4':
-                    //    SearchVehicle();
-                    //    break;
+                    case '2':
+                        RemoveVehicle();
+                        //MoveVehicle();
+                        break;
+                    case '3':
+                        RemoveVehicle();
+                        break;
+                    case '4':
+                        SearchVehicle();
+                        break;
                     case '5':
                         ParkingLotMap();
                         break;
                 }
             } while (!UserChoice.Equals('q'));
+            ReadData.SerializeObject();
         }
 
-
-        public void ParkVehicle()
+        public void MoveVehicle()
         {
-            bool parkingChosen = false;
-            while (parkingChosen == false)
+            //i = 0;
+            //j = 0;
+            //Console.WriteLine("Currently available spaces: ");
+            //switch (answer)
+            //{
+            //    case 1:
+            //        foreach (var item in ParkingSpaces.parkingSpots)
+            //        {
+            //            if (item.availableSpace >= 4)
+            //            {
+            //                Console.Write($"[{i + 1}]");
+            //                j++;
+            //                if (j == 5)
+            //                {
+            //                    Console.WriteLine(" ");
+            //                    j = 0;
+            //                }
+            //            }
+            //            i++;
+            //        }
+            //        break;
 
+            //    case 2:
+            //        foreach (var item in ParkingSpaces.parkingSpots)
+            //        {
+            //            if (item.availableSpace >= 2)
+            //            {
+            //                Console.Write($"[{i + 1}]");
+            //                j++;
+            //                if (j == 5)
+            //                {
+            //                    Console.WriteLine(" ");
+            //                    j = 0;
+            //                }
+            //            }
+            //            i++;
+            //        }
+            //        break;
+            //}
+        }
 
+        ////////////// SÖKA EFTER FORDON ///////////////
+        public void SearchVehicle()
+        {
+            Console.WriteLine("To search for a vehicle please enter License number: ");
+            LicenseChoice = Console.ReadLine().ToUpper();
+            List<ParkingList> spaces = ParkingSpaces.parkingSpots;
+            foreach (ParkingList parkingSpot in spaces)
             {
-                Console.WriteLine("Would you like to park an Mc or Car?");
-                TypeOfVehicle = Console.ReadLine().ToLower();
-
-                if (TypeOfVehicle.Contains("mc"))
+                foreach (Vehicle vehicle in parkingSpot.parkingList)
                 {
-                    //Mc mc = new Mc();
-                    //Console.WriteLine("Enter license number: ");
-                    //string userInput = Console.ReadLine().ToUpper();
-                    //Console.WriteLine($"This {mc.VehicleType} will take {mc.CarSize} spaces\n License Number is: {userInput}\n Time of check in: {Vehicle.TimeCheckin()}");
-                    //ParkingSpaces.parkingSpots.Add(new ParkingList { parkingList = { new Mc { LicensePlate = userInput, CarSize = mc.CarSize, VehicleType = mc.VehicleType, TimeStamp = Vehicle.TimeCheckin() } } });
-                    //parkingChosen = true;
-                    //ReadData.SerializeObject();
-                    //Console.ReadKey();
-                }
-
-                else if (TypeOfVehicle.Contains("car"))
-                {
-                    Car car = new Car();
-                    Console.WriteLine($"This {car.VehicleType} will take {car.CarSize} spaces\n License Number is: {car.LicensePlate}\n Time of check in: {car.TimeStamp}");
-                    Console.ReadKey();
-                    ParkingSpaces.parkingSpots.Add(new ParkingList { parkingList = { new Car { } } });
-                    parkingChosen = true;
-                }
-                else
-                {
-                    Console.WriteLine("Please try again. Vehicle type not supported\n");
+                    if (LicenseChoice.Equals(vehicle.LicensePlate))
+                    {
+                        i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
+                        Console.WriteLine($"\t{vehicle.VehicleType} with license number: {vehicle.LicensePlate}\n\tParked at spot: {i + 1}\n\tCheck in time: {vehicle.TimeStamp}");
+                        break;
+                    }
                 }
             }
-        }
-
-        //public string ParkCar(string Registration, string parkingspot)
-        //{
-        //    int parkingSpot = int.Parse(parkingspot);
-        //    ReadData.DeserializeObject();
-        //    Car newCar = new Car();
-        //    newCar.VehicleType = Vehicle.VehicleType.Car.ToString();
-        //    newCar.regnumber = Registration;
-        //    newCar.checkIn = DateTime.Now;
-        //    ParkingSpaces.parkingSpots[parkingSpot - 1].VehicleInformation.Add(newCar);
-        //    ParkingHouse.ParkingSpotInformation[parkingSpot - 1].SpaceRemaining = ParkingHouse.ParkingSpotInformation[parkingSpot - 1].SpaceRemaining - (int)VehicleSize.car;
-        //    DataJSON.SerializeObject();
-        //    return Registration;
-        //}
-
-        public void ParkVehicleInfo()
-        {
-
+            Console.ReadKey();
 
         }
-        //public static void SearchVehicle()
-        //{
-        //    Console.WriteLine("Enter license plate number: ");
-        //    string licensePlateSearch = Console.ReadLine();
 
-        //    ParkingSpaces obj;
-        //    obj = ParkingList.Find(x => x.licensePlateSearch);
-        //}
-
+        ////////////// TA BORT FORDON ///////////////
         public void RemoveVehicle()
         {
+            Console.WriteLine("To check out vehicle please enter License number: ");
+            LicenseChoice = Console.ReadLine().ToUpper();
+            List<ParkingList> spaces = ParkingSpaces.parkingSpots;
+            foreach (ParkingList parkingSpot in spaces)
+            {
+                foreach (Vehicle vehicle in parkingSpot.parkingList)
+                {
+                    if (LicenseChoice.Equals(vehicle.LicensePlate) && vehicle.CarSize == 4)
+                    {
+                        i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
+                        TimeStampOut = Vehicle.TimeCheckin();
+                        Console.WriteLine($"\tCar was found at spot: {i + 1}\n\tCheck out started at time {TimeStampOut}");
+                        parkingSpot.parkingList.RemoveAt(0);
+                        parkingSpot.availableSpace = 4;
+                        break;
+                    }
+                }
+            }
+            Console.ReadKey();
+
+            foreach (ParkingList parkingSpot in spaces)
+            {
+                j = 0;
+                foreach (Vehicle vehicle in parkingSpot.parkingList)
+                {
+                    if (LicenseChoice.Equals(vehicle.LicensePlate) && vehicle.CarSize == 2)
+                    {
+                        i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
+                        TimeStampOut = Vehicle.TimeCheckin();
+                        Console.WriteLine($"\tMc was found at spot: {i + 1}\n\tCheck out started at time: {TimeStampOut}");
+                        parkingSpot.parkingList.RemoveAt(j);
+                        parkingSpot.availableSpace += 2;
+                        break;
+                    }
+                    j++;
+                }
+            }
+            Console.ReadKey();
+
 
         }
-
+        ////////////// PARKERINGSÖVERBLICK ///////////////
         public void ParkingLotMap()
         {
             List<ParkingList> spaces = ParkingSpaces.parkingSpots;
@@ -132,7 +185,7 @@ namespace PragueParkingSystem
             {
                 foreach (Vehicle vehicle in parkingSpot.parkingList)
                 {
-                    Console.WriteLine("SpaceNum:" + parkingSpot.parkingLotNumber + "vehicle: " + vehicle.LicensePlate + " " + vehicle.VehicleType);
+                    Console.WriteLine($"|Parking No:{parkingSpot.parkingLotNumber}| {vehicle.VehicleType} |License Plate: {vehicle.LicensePlate}");
                 }
             }
             Console.ReadKey();
