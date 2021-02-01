@@ -18,50 +18,27 @@ namespace PragueParkingSystem
 
         public static void ParkCar()
         {
-            //List<ParkingList> parkingListnum = ParkingSpaces.parkingSpots;
-            //if (ParkingSpaces.parkingSpots.Count == 0)
-            //{
-
-            //}
-            Console.WriteLine(ParkingSpaces.parkingSpots.Count);
-            Console.ReadLine();
             if (ParkingSpaces.parkingSpots.Count == 0)
             {
                 ParkingSpaces.parkingSpots = CreateSpaces();
             }
-
-
             foreach (ParkingList availableCarSpace in ParkingSpaces.parkingSpots)
             {
 
                 if (availableCarSpace.availableSpace == 4)
-                {
+                {   
                     Console.WriteLine("Enter the License plate number of the car: ");
                     string userInput = Console.ReadLine().ToUpper();
                     Car car = new Car(userInput, Vehicle.TimeCheckin());
                     availableCarSpace.parkingList.Add(car);
                     Console.WriteLine($"\t{car.VehicleType} with license plate {userInput}\n\tParked at time: {car.TimeStamp}\n\tCar size{car.CarSize}");
                     availableCarSpace.availableSpace = 0;
+                    ReadData.SerializeObject();
+                    Console.ReadKey();
                     break;
                 }
-
-                //Console.WriteLine("Enter the License plate number of the car: ");
-                //string userInput = Console.ReadLine().ToUpper();
-                //Car car = new Car(userInput, Vehicle.TimeCheckin());
-                //ParkingList parkingListList = new ParkingList();
-                ////parkingList.parkingLotNumber = parkingSpotNum++;
-                //parkingListList.parkingList.Add(car);
-                //availableCarSpace.parkingList = ;
-                //ParkingSpaces.parkingSpots.Add(parkingListList);
-                //Console.WriteLine($"\t{car.VehicleType} with license plate {userInput}\n\tParked at time: {car.TimeStamp}\n\tCar size{car.CarSize}");
-                //availableCarSpace.availableSpace = 0;
-                //ReadData.SerializeObject();
-                //Console.ReadKey();
-                //break;
             }
         }
-
-
         public static List<ParkingList> CreateSpaces()
         {
             int phouseSize = int.Parse(ConfigurationManager.AppSettings["ParkingHouseSize"]);
@@ -73,7 +50,7 @@ namespace PragueParkingSystem
             {
                 ParkingList pl = new ParkingList();
                 pl.parkingList = new List<Vehicle>();
-                pl.parkingLotNumber = i + 1;
+                pl.parkingLotNumber = i ;
                 pl.availableSpace = pSpotSize;
                 parkingListList.Add(pl);
             }

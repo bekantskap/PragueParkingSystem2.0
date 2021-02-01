@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Configuration;
+using Spectre.Console;
 namespace PragueParkingSystem
 {
     class MainMenu
@@ -12,9 +10,11 @@ namespace PragueParkingSystem
         { get; set; }
         public string VehicleChoice
         { get; set; }
+        public int SpaceChoice
+        { get; set; }
         public string LicenseChoice
         { get; set; }
-        private int i, j, answer;
+        private int i, j;
         public string TimeStampOut
         { get; set; }
 
@@ -30,7 +30,8 @@ namespace PragueParkingSystem
                 Console.WriteLine("2. Move a Vehicle\n");
                 Console.WriteLine("3. Remove a Vehicle\n");
                 Console.WriteLine("4. Search for a Vehicle\n");
-                Console.WriteLine("5. View map of the parking lot.\n");
+                Console.WriteLine("5. View map of the parking lot\n");
+                Console.WriteLine("6. View the parking price list");
                 Console.WriteLine("Press Q to quit the program\n");
                 UserChoice = char.ToLower(Console.ReadKey(true).KeyChar);
 
@@ -38,7 +39,11 @@ namespace PragueParkingSystem
                 {
                     case '1':
 
-                        Console.WriteLine("Park an Mc or a Car?");
+                        AnsiConsole.Render(
+                            new Panel(new Text($"Would you like to park an Mc or a Car: ").LeftAligned())
+                            .Expand()
+                            .SquareBorder()
+                            .Header("[red]Park A Vehicle[/]"));
                         VehicleChoice = Console.ReadLine().ToLower();
                         switch (VehicleChoice)
                         {
@@ -51,8 +56,8 @@ namespace PragueParkingSystem
                         }
                         break;
                     case '2':
-                        RemoveVehicle();
-                        //MoveVehicle();
+                        //RemoveVehicle();
+                        MoveVehicle();
                         break;
                     case '3':
                         RemoveVehicle();
@@ -63,35 +68,88 @@ namespace PragueParkingSystem
                     case '5':
                         ParkingLotMap();
                         break;
+                    case '6':
+                        PriceList();
+                        break;
                 }
             } while (!UserChoice.Equals('q'));
         }
 
+        /// <summary>
+        /// ////////////////////
+        /// </summary>
         public void MoveVehicle()
         {
-            //i = 0;
-            //j = 0;
-            //Console.WriteLine("Currently available spaces: ");
-            //switch (answer)
-            //{
-            //    case 1:
-            //        foreach (var item in ParkingSpaces.parkingSpots)
-            //        {
-            //            if (item.availableSpace >= 4)
-            //            {
-            //                Console.Write($"[{i + 1}]");
-            //                j++;
-            //                if (j == 5)
-            //                {
-            //                    Console.WriteLine(" ");
-            //                    j = 0;
-            //                }
-            //            }
-            //            i++;
-            //        }
-            //        break;
+            i = 0;
+            j = 0;
+            AnsiConsole.Render(
+            new Panel(new Text($"To move a vehicle please enter license number: ").LeftAligned())
+                .Expand()
+                .SquareBorder()
+                .Header("[red]Move A Vehicle[/]"));
+            LicenseChoice = Console.ReadLine().ToUpper();
+            List<ParkingList> spaces = ParkingSpaces.parkingSpots;
+            foreach (ParkingList parkingSpot in spaces)
+            {
+                foreach (Vehicle vehicle in parkingSpot.parkingList)
+                {
+                    if (LicenseChoice.Equals(vehicle.LicensePlate) && vehicle.CarSize == 4)
+                    {
+                        i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
+                        AnsiConsole.Render(
+                        new Panel(new Text($"{vehicle.VehicleType} with license number: {LicenseChoice} \nParked at spot: {i + 1}\nProceed to next step to choose a new spot").LeftAligned())
+                        .Expand()
+                        .SquareBorder()
+                        .Header("[green]Move A Vehicle[/]"));
+                        Console.ReadLine();
+                        parkingSpot.parkingList.RemoveAt(0);
+                        parkingSpot.availableSpace = 4;
+                        ReadData.SerializeObject();
+                        foreach (ParkingList pSpot in spaces)
+                        {
+                            AnsiConsole.Render(
+                            new Panel(new Text($"Please choose a new parking spot: ").LeftAligned())
+                            .Expand()
+                            .SquareBorder()
+                            .Header("[red]Move A Vehicle[/]"));
+                            SpaceChoice = Int32.Parse(Console.ReadLine());
+                            SpaceChoice -= 1;
+                            pSpot.availableSpace = 0;
+                            Car car = new Car(LicenseChoice, TimeStampOut);
+                            ParkingSpaces.parkingSpots[SpaceChoice].parkingList.Add(car);
+                            AnsiConsole.Render(
+                            new Panel(new Text($"Car was parked at {SpaceChoice + 1}").LeftAligned())
+                            .Expand()
+                            .SquareBorder()
+                            .Header("[green]Move A Vehicle[/]"));
+                            Console.ReadLine();
+                            ReadData.SerializeObject();
+                            break;
+                        }
+                    }
 
-            //    case 2:
+                }
+
+            }
+
+
+            //foreach (ParkingList parkingSpot in spaces)
+            //{
+            //    //j = 0;
+            //    foreach (Vehicle vehicle in parkingSpot.parkingList)
+            //    {
+            //        if (LicenseChoice.Equals(vehicle.LicensePlate) && vehicle.CarSize == 2)
+            //        {
+            //            i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
+            //            Console.WriteLine($"\tMc was found at spot: {i + 1}\n\tMoving vehicle");
+            //            parkingSpot.parkingList.RemoveAt(j);
+            //            parkingSpot.availableSpace += 2;
+            //            break;
+            //        }
+            //        j++;
+
+            //        Console.WriteLine("Currently available spaces: ");
+
             //        foreach (var item in ParkingSpaces.parkingSpots)
             //        {
             //            if (item.availableSpace >= 2)
@@ -105,15 +163,26 @@ namespace PragueParkingSystem
             //                }
             //            }
             //            i++;
+            //            break;
             //        }
-            //        break;
+            //    }
             //}
+            //Console.ReadKey();
+
+
+
         }
+
 
         ////////////// SÖKA EFTER FORDON ///////////////
         public void SearchVehicle()
         {
-            Console.WriteLine("To search for a vehicle please enter License number: ");
+
+            AnsiConsole.Render(
+            new Panel(new Text($"Please enter license number:").LeftAligned())
+            .Expand()
+            .SquareBorder()
+            .Header("[red]Search for a parked vehicle[/]"));
             LicenseChoice = Console.ReadLine().ToUpper();
             List<ParkingList> spaces = ParkingSpaces.parkingSpots;
             foreach (ParkingList parkingSpot in spaces)
@@ -123,19 +192,31 @@ namespace PragueParkingSystem
                     if (LicenseChoice.Equals(vehicle.LicensePlate))
                     {
                         i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
-                        Console.WriteLine($"\t{vehicle.VehicleType} with license number: {vehicle.LicensePlate}\n\tParked at spot: {i + 1}\n\tCheck in time: {vehicle.TimeStamp}");
+                        AnsiConsole.Render(
+                        new Panel(new Text($"{vehicle.VehicleType} with license number: {vehicle.LicensePlate} \nParked at spot: {i + 1}\nCheck in time: {vehicle.TimeStamp}").LeftAligned())
+                        .Expand()
+                        .SquareBorder()
+                        .Header("[green]Search for a parked vehicle[/]"));
+                        Console.ReadLine();
                         break;
                     }
                 }
+
             }
-            Console.ReadKey();
 
         }
 
         ////////////// TA BORT FORDON ///////////////
         public void RemoveVehicle()
         {
-            Console.WriteLine("To check out vehicle please enter License number: ");
+            //Console.WriteLine("To check out vehicle please enter License number: ");
+
+            AnsiConsole.Render(
+               new Panel(new Text($"To check out vehicle please enter License number: ").LeftAligned())
+                   .Expand()
+                   .SquareBorder()
+                   .Header("[red]Check Out Menu[/]"));
+
             LicenseChoice = Console.ReadLine().ToUpper();
             List<ParkingList> spaces = ParkingSpaces.parkingSpots;
             foreach (ParkingList parkingSpot in spaces)
@@ -146,14 +227,21 @@ namespace PragueParkingSystem
                     {
                         i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
                         TimeStampOut = Vehicle.TimeCheckin();
-                        Console.WriteLine($"\tCar was found at spot: {i + 1}\n\tCheck out started at time {TimeStampOut}");
+                        AnsiConsole.Render(
+                        new Panel(new Text($"Car was found at spot: {i + 1}\nCheck out started at time {TimeStampOut}").LeftAligned())
+                        .Expand()
+                        .SquareBorder()
+                        .Header("[green]Check Out Menu[/]"));
+                        //Console.WriteLine($"\tCar was found at spot: {i + 1}\n\tCheck out started at time {TimeStampOut}");
+                        Console.ReadKey();
                         parkingSpot.parkingList.RemoveAt(0);
                         parkingSpot.availableSpace = 4;
+                        ReadData.SerializeObject();
                         break;
                     }
                 }
             }
-            Console.ReadKey();
+
 
             foreach (ParkingList parkingSpot in spaces)
             {
@@ -164,15 +252,21 @@ namespace PragueParkingSystem
                     {
                         i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
                         TimeStampOut = Vehicle.TimeCheckin();
-                        Console.WriteLine($"\tMc was found at spot: {i + 1}\n\tCheck out started at time: {TimeStampOut}");
+                        AnsiConsole.Render(
+                        new Panel(new Text($"Mc was found at spot: {i + 1}\nCheck out started at time {TimeStampOut}").LeftAligned())
+                        .Expand()
+                        .SquareBorder()
+                        .Header("[green]Check Out Menu[/]"));
+                        Console.ReadKey();
                         parkingSpot.parkingList.RemoveAt(j);
                         parkingSpot.availableSpace += 2;
+                        ReadData.SerializeObject();
                         break;
                     }
                     j++;
                 }
             }
-            Console.ReadKey();
+
 
 
         }
@@ -184,45 +278,27 @@ namespace PragueParkingSystem
             {
                 foreach (Vehicle vehicle in parkingSpot.parkingList)
                 {
-                    Console.WriteLine($"|Parking No:{parkingSpot.parkingLotNumber}| {vehicle.VehicleType} |License Plate: {vehicle.LicensePlate}");
+                    AnsiConsole.Render(
+                    new Panel(new Text($"\n|Parking No:{parkingSpot.parkingLotNumber}| |License Plate: {vehicle.LicensePlate}\n").Centered())
+                   .Expand()
+                   .AsciiBorder()
+                   .Header($"[red]{vehicle.VehicleType}[/]")
+                   .HeaderAlignment(Justify.Center));
                 }
             }
             Console.ReadKey();
         }
 
-
-
-
-
-
-
-        //public void CreateSpaces()
-        //{
-        //    int phouseSize = int.Parse(ConfigurationManager.AppSettings["ParkingHouseSize"]);
-        //    int pSpotSize = int.Parse(ConfigurationManager.AppSettings["ParkingSpotSize"]);
-        //    int freeMins = int.Parse(ConfigurationManager.AppSettings["FreeMinutes"]);
-        //    float carPrice = float.Parse(ConfigurationManager.AppSettings["CarPrice"]);
-        //    float mcPrice = float.Parse(ConfigurationManager.AppSettings["MCPrice"]);
-
-        //    if (ParkingSpaces.parkingSpots.Count == 0)
-        //    {
-        //        ReadData.SerializeObject();
-
-        //        for (int i = 0; i < phouseSize; i++)
-        //        {
-        //            ParkingList pl = new ParkingList();
-        //            pl.parkingList = new List<Vehicle>();
-        //            pl.parkingLotNumber = i + 1;
-        //            pl.availableSpace = pSpotSize;
-        //            ParkingSpaces.parkingSpots.Add(pl);
-        //        }
-        //        Console.WriteLine(ParkingSpaces.parkingSpots.Count);
-        //    }
-
-        //}
-
+        public void PriceList()
+        {
+            int phouseSize = int.Parse(ConfigurationManager.AppSettings["ParkingHouseSize"]);
+            int pSpotSize = int.Parse(ConfigurationManager.AppSettings["ParkingSpotSize"]);
+        }
 
     }
-
 }
+
+
+
+
 

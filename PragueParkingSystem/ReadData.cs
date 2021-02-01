@@ -9,8 +9,7 @@ namespace PragueParkingSystem
 {
     class ReadData
     {
-        string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
-        ConfigSettings newConfig = new ConfigSettings();
+
         public static void SerializeObject()
         {
             JsonSerializer serializer = new JsonSerializer();
@@ -31,25 +30,29 @@ namespace PragueParkingSystem
             ParkingSpaces.parkingSpots = JsonConvert.DeserializeObject<List<ParkingList>>(json);
         }
 
-        public static void SerializeConfig()
-        {
-            JsonSerializer seralizer = new JsonSerializer();
-            seralizer.Converters.Add(new JavaScriptDateTimeConverter());
-            seralizer.NullValueHandling = NullValueHandling.Ignore;
-            string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
-            var result = JsonConvert.SerializeObject(Formatting.Indented);
-            using (StreamWriter writer = new StreamWriter(fileConfigPathJSON))
-            {
-                writer.Write(result);
-            }
-        }
 
-        public static void DeserializeConfig()
-        {
-            string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
-            string result = File.ReadAllText(fileConfigPathJSON);
-            JsonConvert.DeserializeObject<ConfigSettings>(result);
-        }
+        ////används inte///
+        //string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
+        //ConfigSettings newConfig = new ConfigSettings();
+        //public static void SerializeConfig()
+        //{
+        //    JsonSerializer seralizer = new JsonSerializer();
+        //    seralizer.Converters.Add(new JavaScriptDateTimeConverter());
+        //    seralizer.NullValueHandling = NullValueHandling.Ignore;
+        //    string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
+        //    var result = JsonConvert.SerializeObject(Formatting.Indented);
+        //    using (StreamWriter writer = new StreamWriter(fileConfigPathJSON))
+        //    {
+        //        writer.Write(result);
+        //    }
+        //}
+
+        //public static void DeserializeConfig()
+        //{
+        //    string fileConfigPathJSON = @"C:/Repos/ParkingList/config.json";
+        //    string result = File.ReadAllText(fileConfigPathJSON);
+        //    JsonConvert.DeserializeObject<ConfigSettings>(result);
+        //}
 
 
 
