@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Configuration;
+using Spectre.Console;
 namespace PragueParkingSystem
 {
     class Car : Vehicle
@@ -26,12 +27,22 @@ namespace PragueParkingSystem
             {
 
                 if (availableCarSpace.availableSpace == 4)
-                {   
-                    Console.WriteLine("Enter the License plate number of the car: ");
+                {
+                    AnsiConsole.Render(
+                    new Panel(new Text($"Please enter license number: ").Centered())
+                        .Expand()
+                        .SquareBorder()
+                        .Header("[red]Park A Car[/]")
+                        .HeaderAlignment(Justify.Center));
                     string userInput = Console.ReadLine().ToUpper();
                     Car car = new Car(userInput, Vehicle.TimeCheckin());
                     availableCarSpace.parkingList.Add(car);
-                    Console.WriteLine($"\t{car.VehicleType} with license plate {userInput}\n\tParked at time: {car.TimeStamp}\n\tCar size{car.CarSize}");
+                    AnsiConsole.Render(
+                    new Panel(new Text($"{car.VehicleType} with license plate {userInput}\nParked at time: {car.TimeStamp}\nSpace left: Parking spot is now full.").Centered())
+                        .Expand()
+                        .SquareBorder()
+                        .Header("[green]Park A Car[/]")
+                        .HeaderAlignment(Justify.Center));
                     availableCarSpace.availableSpace = 0;
                     ReadData.SerializeObject();
                     Console.ReadKey();
@@ -50,7 +61,7 @@ namespace PragueParkingSystem
             {
                 ParkingList pl = new ParkingList();
                 pl.parkingList = new List<Vehicle>();
-                pl.parkingLotNumber = i ;
+                pl.parkingLotNumber = i+1 ;
                 pl.availableSpace = pSpotSize;
                 parkingListList.Add(pl);
             }

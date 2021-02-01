@@ -1,0 +1,647 @@
+[
+  {
+    "parkingList": [],
+    "parkingLotNumber": 0,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 1,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "VOLVO",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "18:28:47 02-01"
+      },
+      {
+        "LicensePlate": "BARK",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 2,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "VAA",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "19:57:04 02-01"
+      }
+    ],
+    "parkingLotNumber": 3,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "TOYOTA",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "18:37:21 02-01"
+      }
+    ],
+    "parkingLotNumber": 4,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "HEJ",
+        "VehicleType": "Mc",
+        "CarSize": 2,
+        "TimeStamp": "18:40:40 02-01"
+      },
+      {
+        "LicensePlate": "HARLEY",
+        "VehicleType": "Mc",
+        "CarSize": 2,
+        "TimeStamp": "22:16:19 02-01"
+      }
+    ],
+    "parkingLotNumber": 5,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "KLU",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "18:42:51 02-01"
+      }
+    ],
+    "parkingLotNumber": 6,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "FLYTTABIL2",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "21:20:26 02-01"
+      }
+    ],
+    "parkingLotNumber": 7,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "BARK",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "21:23:02 02-01"
+      }
+    ],
+    "parkingLotNumber": 8,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "BYTE",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "21:31:21 02-01"
+      }
+    ],
+    "parkingLotNumber": 9,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "INDEX",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "21:40:44 02-01"
+      }
+    ],
+    "parkingLotNumber": 10,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 11,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "TOYOTA",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 12,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "TOYOTA",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 13,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "TOYOTA",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 14,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "VOLVO",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 15,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "SAAB",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 16,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 17,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 18,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "BARK",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 19,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 20,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "FLYTTABIL2",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 21,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 22,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 23,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "SAAB",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 24,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 25,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 26,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "SAAB",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 27,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 28,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 29,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 30,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 31,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [
+      {
+        "LicensePlate": "BARK",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": null
+      }
+    ],
+    "parkingLotNumber": 32,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 33,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 34,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 35,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 36,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 37,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 38,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 39,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 40,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 41,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 42,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 43,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 44,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 45,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 46,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 47,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 48,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 49,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 50,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 51,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 52,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 53,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 54,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 55,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 56,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 57,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 58,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 59,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 60,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 61,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 62,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 63,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 64,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 65,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 66,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 67,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 68,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 69,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 70,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 71,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 72,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 73,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 74,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 75,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 76,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 77,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 78,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 79,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 80,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 81,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 82,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 83,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 84,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 85,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 86,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 87,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 88,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 89,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 90,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 91,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 92,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 93,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 94,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 95,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 96,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 97,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 98,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 99,
+    "availableSpace": 4
+  }
+]

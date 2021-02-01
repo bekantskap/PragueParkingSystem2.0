@@ -16,8 +16,7 @@ namespace PragueParkingSystem
             serializer.Converters.Add(new JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;
             string JSONresult = JsonConvert.SerializeObject(ParkingSpaces.parkingSpots, Formatting.Indented);
-            string path = @"C:/Repos/ParkingList/pSpaces.json";
-            using (var tw = new StreamWriter(path, false))
+            using (var tw = new StreamWriter("../../../../pSpaces.json"))
             {
                 tw.Write(JSONresult);
 
@@ -26,7 +25,7 @@ namespace PragueParkingSystem
 
         public static void DeserializeObject()
         {
-            string json = File.ReadAllText(@"C:/Repos/ParkingList/pSpaces.json");
+            string json = File.ReadAllText("../../../../pSpaces.json");
             ParkingSpaces.parkingSpots = JsonConvert.DeserializeObject<List<ParkingList>>(json);
         }
 
@@ -53,12 +52,6 @@ namespace PragueParkingSystem
         //    string result = File.ReadAllText(fileConfigPathJSON);
         //    JsonConvert.DeserializeObject<ConfigSettings>(result);
         //}
-
-
-
-
-
-
 
 
 

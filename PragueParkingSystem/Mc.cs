@@ -23,27 +23,27 @@ namespace PragueParkingSystem
                 ParkingSpaces.parkingSpots = Car.CreateSpaces();
             }
 
-
             foreach (ParkingList extraMc in ParkingSpaces.parkingSpots)
             {
-
 
                 if (extraMc.availableSpace == 4)
                 {
                     AnsiConsole.Render(
-                    new Panel(new Text($"Please enter license number: ").LeftAligned())
+                    new Panel(new Text($"\nPlease enter license number: \n").Centered())
                         .Expand()
                         .SquareBorder()
-                        .Header("[red]Park An MC[/]"));
+                        .Header("[red]Park An MC[/]")
+                        .HeaderAlignment(Justify.Center));
                     string userInput = Console.ReadLine().ToUpper();
                     Mc mc = new Mc(userInput, Vehicle.TimeCheckin());
                     extraMc.parkingList.Add(mc);
                     AnsiConsole.Render(
-                    new Panel(new Text($"{mc.VehicleType} with license plate {userInput}\nParked at time: {mc.TimeStamp}\nCar size{mc.CarSize}").LeftAligned())
+                    new Panel(new Text($"{mc.VehicleType} with license plate {userInput}\nParked at time: {mc.TimeStamp}\nSpace left: Room for 1 more Mc.").Centered())
                         .Expand()
                         .SquareBorder()
-                        .Header("[red]Move A Vehicle[/]"));
-                    extraMc.availableSpace = extraMc.availableSpace - 2;
+                        .Header("[green]Move A Vehicle[/]")
+                        .HeaderAlignment(Justify.Center));
+                    extraMc.availableSpace = extraMc.availableSpace -= 2;
                     ReadData.SerializeObject();
                     Console.ReadKey();
                     break;
@@ -51,19 +51,21 @@ namespace PragueParkingSystem
                 if(extraMc.availableSpace == 2)
                 {
                     AnsiConsole.Render(
-                    new Panel(new Text($"Please enter license number: ").LeftAligned())
+                    new Panel(new Text($"\nPlease enter license number: \n").Centered())
                         .Expand()
                         .SquareBorder()
-                        .Header("[red]Park An MC[/]"));
+                        .Header("[red]Park An MC[/]")
+                        .HeaderAlignment(Justify.Center));
                     string userInput = Console.ReadLine().ToUpper();
                     Mc mc = new Mc(userInput, Vehicle.TimeCheckin());
                     extraMc.parkingList.Add(mc);
                     AnsiConsole.Render(
-                    new Panel(new Text($"{mc.VehicleType} with license plate {userInput}\nParked at time: {mc.TimeStamp}\nCar size{mc.CarSize}").LeftAligned())
+                    new Panel(new Text($"{mc.VehicleType} with license plate {userInput}\nParked at time: {mc.TimeStamp}\nSpace left: Parking space is now full.").Centered())
                         .Expand()
                         .SquareBorder()
-                        .Header("[red]Move A Vehicle[/]"));
-                    extraMc.availableSpace = extraMc.availableSpace - 2;
+                        .Header("[green]Move A Vehicle[/]")
+                        .HeaderAlignment(Justify.Center));
+                    extraMc.availableSpace = extraMc.availableSpace -= 2;
                     ReadData.SerializeObject();
                     Console.ReadKey();
                     break;
