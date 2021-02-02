@@ -1,26 +1,22 @@
 [
   {
-    "parkingList": [],
-    "parkingLotNumber": 0,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [],
+    "parkingList": [
+      {
+        "LicensePlate": null,
+        "VehicleType": null,
+        "CarSize": 0,
+        "TimeStamp": null
+      }
+    ],
     "parkingLotNumber": 1,
     "availableSpace": 0
   },
   {
     "parkingList": [
       {
-        "LicensePlate": "VOLVO",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "18:28:47 02-01"
-      },
-      {
-        "LicensePlate": "BARK",
-        "VehicleType": "Car",
-        "CarSize": 4,
+        "LicensePlate": null,
+        "VehicleType": null,
+        "CarSize": 0,
         "TimeStamp": null
       }
     ],
@@ -30,10 +26,10 @@
   {
     "parkingList": [
       {
-        "LicensePlate": "VAA",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "19:57:04 02-01"
+        "LicensePlate": null,
+        "VehicleType": null,
+        "CarSize": 0,
+        "TimeStamp": null
       }
     ],
     "parkingLotNumber": 3,
@@ -42,10 +38,10 @@
   {
     "parkingList": [
       {
-        "LicensePlate": "TOYOTA",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "18:37:21 02-01"
+        "LicensePlate": null,
+        "VehicleType": null,
+        "CarSize": 0,
+        "TimeStamp": null
       }
     ],
     "parkingLotNumber": 4,
@@ -54,121 +50,14 @@
   {
     "parkingList": [
       {
-        "LicensePlate": "HEJ",
-        "VehicleType": "Mc",
-        "CarSize": 2,
-        "TimeStamp": "18:40:40 02-01"
-      },
-      {
-        "LicensePlate": "HARLEY",
-        "VehicleType": "Mc",
-        "CarSize": 2,
-        "TimeStamp": "22:16:19 02-01"
+        "LicensePlate": null,
+        "VehicleType": null,
+        "CarSize": 0,
+        "TimeStamp": null
       }
     ],
     "parkingLotNumber": 5,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "KLU",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "18:42:51 02-01"
-      }
-    ],
-    "parkingLotNumber": 6,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "FLYTTABIL2",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "21:20:26 02-01"
-      }
-    ],
-    "parkingLotNumber": 7,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "BARK",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "21:23:02 02-01"
-      }
-    ],
-    "parkingLotNumber": 8,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "BYTE",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "21:31:21 02-01"
-      }
-    ],
-    "parkingLotNumber": 9,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "INDEX",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "21:40:44 02-01"
-      }
-    ],
-    "parkingLotNumber": 10,
-    "availableSpace": 0
-  },
-  {
-    "parkingList": [],
-    "parkingLotNumber": 11,
-    "availableSpace": 4
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "TOYOTA",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
-    "parkingLotNumber": 12,
-    "availableSpace": 4
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "TOYOTA",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
-    "parkingLotNumber": 13,
-    "availableSpace": 4
-  },
-  {
-    "parkingList": [
-      {
-        "LicensePlate": "TOYOTA",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
-    "parkingLotNumber": 14,
-    "availableSpace": 4
+    "availableSpace": 2
   },
   {
     "parkingList": [
@@ -176,21 +65,59 @@
         "LicensePlate": "VOLVO",
         "VehicleType": "Car",
         "CarSize": 4,
-        "TimeStamp": null
+        "TimeStamp": "11:27:20 02/02"
       }
     ],
+    "parkingLotNumber": 6,
+    "availableSpace": 0
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 7,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 8,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 9,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 10,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 11,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 12,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 13,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 14,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
     "parkingLotNumber": 15,
     "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "SAAB",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 16,
     "availableSpace": 4
   },
@@ -205,14 +132,7 @@
     "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "BARK",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 19,
     "availableSpace": 4
   },
@@ -222,14 +142,7 @@
     "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "FLYTTABIL2",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 21,
     "availableSpace": 4
   },
@@ -244,14 +157,7 @@
     "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "SAAB",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 24,
     "availableSpace": 4
   },
@@ -266,14 +172,7 @@
     "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "SAAB",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 27,
     "availableSpace": 4
   },
@@ -298,14 +197,7 @@
     "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "BARK",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 32,
     "availableSpace": 4
   },
@@ -642,6 +534,11 @@
   {
     "parkingList": [],
     "parkingLotNumber": 99,
+    "availableSpace": 4
+  },
+  {
+    "parkingList": [],
+    "parkingLotNumber": 100,
     "availableSpace": 4
   }
 ]

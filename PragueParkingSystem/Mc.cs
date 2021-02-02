@@ -16,6 +16,8 @@ namespace PragueParkingSystem
             TimeStamp = timeStamp;
         }
 
+        ///////////////// PARK VEHICLES /////////////////
+        ////////////////      MC        ////////////////
         public static void ParkMC()
         {
             if (ParkingSpaces.parkingSpots.Count == 0)
@@ -35,20 +37,20 @@ namespace PragueParkingSystem
                         .Header("[red]Park An MC[/]")
                         .HeaderAlignment(Justify.Center));
                     string userInput = Console.ReadLine().ToUpper();
-                    Mc mc = new Mc(userInput, Vehicle.TimeCheckin());
+                    Mc mc = new Mc(userInput, TimeCheckin());
                     extraMc.parkingList.Add(mc);
                     AnsiConsole.Render(
                     new Panel(new Text($"{mc.VehicleType} with license plate {userInput}\nParked at time: {mc.TimeStamp}\nSpace left: Room for 1 more Mc.").Centered())
                         .Expand()
                         .SquareBorder()
-                        .Header("[green]Move A Vehicle[/]")
+                        .Header("[green]Park An Mc[/]")
                         .HeaderAlignment(Justify.Center));
                     extraMc.availableSpace = extraMc.availableSpace -= 2;
                     ReadData.SerializeObject();
                     Console.ReadKey();
                     break;
                 }
-                if(extraMc.availableSpace == 2)
+                if (extraMc.availableSpace == 2)
                 {
                     AnsiConsole.Render(
                     new Panel(new Text($"\nPlease enter license number: \n").Centered())
@@ -63,7 +65,7 @@ namespace PragueParkingSystem
                     new Panel(new Text($"{mc.VehicleType} with license plate {userInput}\nParked at time: {mc.TimeStamp}\nSpace left: Parking space is now full.").Centered())
                         .Expand()
                         .SquareBorder()
-                        .Header("[green]Move A Vehicle[/]")
+                        .Header("[green]Park An MC[/]")
                         .HeaderAlignment(Justify.Center));
                     extraMc.availableSpace = extraMc.availableSpace -= 2;
                     ReadData.SerializeObject();

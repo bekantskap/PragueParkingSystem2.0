@@ -9,14 +9,17 @@ namespace PragueParkingSystem
     class Car : Vehicle
     {
 
-        public Car(string licensePlate, string timeStamp)
+        public Car(string licensePlate)
         {
             VehicleType = "Car";
             CarSize = 4;
             LicensePlate = licensePlate;
-            TimeStamp = timeStamp;
+            TimeStamp = TimeCheckin();
         }
 
+
+        ///////////////// PARK VEHICLES /////////////////
+        ////////////////      CARS      ////////////////
         public static void ParkCar()
         {
             if (ParkingSpaces.parkingSpots.Count == 0)
@@ -35,7 +38,7 @@ namespace PragueParkingSystem
                         .Header("[red]Park A Car[/]")
                         .HeaderAlignment(Justify.Center));
                     string userInput = Console.ReadLine().ToUpper();
-                    Car car = new Car(userInput, Vehicle.TimeCheckin());
+                    Car car = new Car(userInput);
                     availableCarSpace.parkingList.Add(car);
                     AnsiConsole.Render(
                     new Panel(new Text($"{car.VehicleType} with license plate {userInput}\nParked at time: {car.TimeStamp}\nSpace left: Parking spot is now full.").Centered())
@@ -48,26 +51,9 @@ namespace PragueParkingSystem
                     Console.ReadKey();
                     break;
                 }
+
             }
         }
-        public static List<ParkingList> CreateSpaces()
-        {
-            int phouseSize = int.Parse(ConfigurationManager.AppSettings["ParkingHouseSize"]);
-            int pSpotSize = int.Parse(ConfigurationManager.AppSettings["ParkingSpotSize"]);
-
-            List<ParkingList> parkingListList = new List<ParkingList>();
-
-            for (int i = 0; i < phouseSize; i++)
-            {
-                ParkingList pl = new ParkingList();
-                pl.parkingList = new List<Vehicle>();
-                pl.parkingLotNumber = i+1 ;
-                pl.availableSpace = pSpotSize;
-                parkingListList.Add(pl);
-            }
-            return parkingListList;
-        }
-
 
     }
 }
