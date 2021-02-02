@@ -2,74 +2,53 @@
   {
     "parkingList": [
       {
-        "LicensePlate": null,
-        "VehicleType": null,
-        "CarSize": 0,
-        "TimeStamp": null
+        "LicensePlate": "HARLEY",
+        "VehicleType": "Mc",
+        "CarSize": 2,
+        "TimeStamp": "11:48:11 02-02"
       }
     ],
     "parkingLotNumber": 1,
-    "availableSpace": 0
+    "availableSpace": 2
   },
   {
     "parkingList": [
       {
-        "LicensePlate": null,
-        "VehicleType": null,
-        "CarSize": 0,
-        "TimeStamp": null
+        "LicensePlate": "CHOPPER",
+        "VehicleType": "Mc",
+        "CarSize": 2,
+        "TimeStamp": "11:48:17 02-02"
       }
     ],
     "parkingLotNumber": 2,
-    "availableSpace": 0
+    "availableSpace": 2
   },
   {
     "parkingList": [
       {
-        "LicensePlate": null,
-        "VehicleType": null,
-        "CarSize": 0,
-        "TimeStamp": null
+        "LicensePlate": "FORD",
+        "VehicleType": "Car",
+        "CarSize": 4,
+        "TimeStamp": "11:50:30 02-02"
       }
     ],
     "parkingLotNumber": 3,
     "availableSpace": 0
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": null,
-        "VehicleType": null,
-        "CarSize": 0,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 4,
-    "availableSpace": 0
+    "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": null,
-        "VehicleType": null,
-        "CarSize": 0,
-        "TimeStamp": null
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 5,
-    "availableSpace": 2
+    "availableSpace": 4
   },
   {
-    "parkingList": [
-      {
-        "LicensePlate": "VOLVO",
-        "VehicleType": "Car",
-        "CarSize": 4,
-        "TimeStamp": "11:27:20 02/02"
-      }
-    ],
+    "parkingList": [],
     "parkingLotNumber": 6,
-    "availableSpace": 0
+    "availableSpace": 4
   },
   {
     "parkingList": [],

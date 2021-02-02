@@ -73,12 +73,7 @@ namespace PragueParkingSystem
                     break;
                 }
             }
-
         }
-
-
-
-
     }
 }
 

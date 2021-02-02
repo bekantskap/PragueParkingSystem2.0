@@ -7,9 +7,6 @@ namespace PragueParkingSystem
 {
     public class ParkingSpaces
     {
-
-
         public static List<ParkingList> parkingSpots = new List<ParkingList>();
-
     }
 }

@@ -8,7 +8,6 @@ namespace PragueParkingSystem
 {
     class Car : Vehicle
     {
-
         public Car(string licensePlate)
         {
             VehicleType = "Car";
@@ -16,8 +15,6 @@ namespace PragueParkingSystem
             LicensePlate = licensePlate;
             TimeStamp = TimeCheckin();
         }
-
-
         ///////////////// PARK VEHICLES /////////////////
         ////////////////      CARS      ////////////////
         public static void ParkCar()

@@ -7,15 +7,12 @@ namespace PragueParkingSystem
 {
     class MainMenu
     {
-
         public char UserChoice
         { get; set; }
         public string VehicleChoice
         { get; set; }
         public int SpaceChoice
         { get; set; }
-
-
         public void MenuOptions()
         {
             do

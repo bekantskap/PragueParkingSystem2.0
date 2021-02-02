@@ -161,7 +161,7 @@ namespace PragueParkingSystem
                         i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
                         TimeStampOut = Vehicle.TimeCheckin();
                         AnsiConsole.Render(
-                        new Panel(new Text($"Car was found at spot: {i}\nCheck in time:{vehicle.TimeStamp}\nCheck out time: {TimeStampOut}").Centered())
+                        new Panel(new Text($"Car was found at spot: {i + 1}\nCheck in time:{vehicle.TimeStamp}\nCheck out time: {TimeStampOut}").Centered())
                         .Expand()
                         .SquareBorder()
                         .Header("[green]Check Out Menu[/]")
@@ -177,7 +177,7 @@ namespace PragueParkingSystem
                         i = ParkingSpaces.parkingSpots.IndexOf(parkingSpot);
                         TimeStampOut = Vehicle.TimeCheckin();
                         AnsiConsole.Render(
-                        new Panel(new Text($"Mc was found at spot: {i}\nCheck in time:{vehicle.TimeStamp}\nCheck out time: {TimeStampOut}").Centered())
+                        new Panel(new Text($"Mc was found at spot: {i + 1}\nCheck in time:{vehicle.TimeStamp}\nCheck out time: {TimeStampOut}").Centered())
                         .Expand()
                         .SquareBorder()
                         .Header("[green]Check Out Menu[/]")
@@ -223,8 +223,10 @@ namespace PragueParkingSystem
                    .Header($"[green]Price List[/]")
                    .HeaderAlignment(Justify.Center));
             Console.ReadKey();
-
         }
+        ///////////////// CALCULATES TOTAL PRICE /////////////////
+
+
         ///////////////// CREATES PARKING LIST IF NOT EXISTING /////////////////
         public static List<ParkingList> CreateSpaces()
         {
